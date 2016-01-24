@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+int main()
+{
+	int n,m,k,r1,r2,c1,c2,c3,c4;
+	scanf("%d %d",&n,&m);
+	scanf("%d",&k);
+	while(k--)
+	{
+		scanf("%d %d %d %d %d %d",&r1,&r2,&c1,&c2,&c3,&c4);
+		if(r1>c1 && r2>c2)
+		{
+			if((r1-c1)==(r2-c2) && (c3>r1 && c4>r2) && (c3-r1)==(c4-r2))
+			printf("NO\n");
+			else 
+			printf("YES\n");
+		}
+		else if(r1<c1 && r2<c2)
+		{
+			if((c1-r1)==(c2-r2) && (c3<r1 && c4<r2) && (r1-c3)==(r2-c4))
+			printf("NO\n");
+			else
+			printf("YES\n");
+		}
+		else if(r1<c1 && r2>c2)
+		{
+			if((c1-r1)==(r2-c2) && (c3<r1 && c4>r2) && (r1-c3)==(c4-r2))
+				printf("NO\n");
+			else
+			printf("YES\n");
+		}
+			else if(r1>c1 && r2<c2)
+		{
+			if((r1-c1)==(c2-r2) && (c3>r1 && c4<r2) && (c3-r1)==(r2-c4))	
+				printf("NO\n");
+			else
+			printf("YES\n");																																																
+		}
+		else if(r1==r2==c1==c2==c3==c4)
+		printf("NO\n");
+		else
+		printf("YES\n");
+	
+    }
+	return 0;
+}
